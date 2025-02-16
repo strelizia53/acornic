@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travus - Coming Soon</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@400;700&family=Nunito:wght@400;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1E3A5F",
+              secondary: "#2CA6A4",
+              accent: "#F76707",
+              neutral: "#F8F9FA",
+              dark: "#24292E",
+            },
+            fontFamily: {
+              heading: ["Poppins", "sans-serif"],
+              subheading: ["Montserrat", "sans-serif"],
+              body: ["Nunito", "sans-serif"],
+              text: ["Roboto", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .countdown div {
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        padding: 15px;
+        width: 80px;
+      }
+    </style>
+  </head>
+
+  <body class="bg-neutral text-dark font-body min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-primary text-white py-4 shadow-lg">
+      <div class="container mx-auto flex justify-between items-center px-6">
+        <a href="index.html" class="text-2xl font-heading font-bold">Travus</a>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6 font-text">
+          <li>
+            <a href="guide.html" class="hover:text-accent transition">guides</a>
+          </li>
+          <li>
+            <a href="community.html" class="hover:text-accent transition"
+              >community</a
+            >
+          </li>
+        </ul>
+
+        <button
+          class="bg-accent px-4 py-2 rounded-md font-semibold hover:bg-orange-600 transition"
+        >
+          Book Now
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative flex flex-col justify-center items-center h-[50vh] text-white text-center bg-cover bg-center px-6"
+      style="background-image: url('images/4.jpg')"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+      <div class="relative z-10 max-w-2xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-heading font-bold mb-4">
+          Travel Stories from Sri Lanka
+        </h1>
+        <p class="text-lg md:text-xl font-text leading-relaxed">
+          Read experiences from fellow travelers and get inspired for your next
+          trip.
+        </p>
+      </div>
+    </section>
+
+    <!-- Posts Section -->
+    <section class="py-10 px-6 md:px-20 bg-gray-50">
+      <h3 class="text-3xl font-subheading font-bold text-center mb-6">
+        Community Posts
+      </h3>
+
+      <div id="postList" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Dummy Posts -->
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition transform hover:scale-105"
+        >
+          <img
+            src="images/2.jpg"
+            alt="Ella Rock"
+            class="w-full h-52 object-cover"
+          />
+          <div class="p-4">
+            <h4 class="text-xl font-heading font-bold">Hiking to Ella Rock</h4>
+            <p class="text-gray-700 mt-2">
+              The hike to Ella Rock was breathtaking! Stunning views of Sri
+              Lanka’s lush greenery. Highly recommended!
+            </p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <button
+                onclick="likePost(this)"
+                class="flex items-center space-x-2 text-gray-600 hover:text-accent transition"
+              >
+                <span class="text-lg">👍</span>
+                <span class="like-count">12</span>
+              </button>
+              <button
+                onclick="commentOnPost(this)"
+                class="text-gray-600 hover:text-accent transition"
+              >
+                💬 Comment
+              </button>
+            </div>
+
+            <div class="comments mt-4 hidden">
+              <input
+                type="text"
+                class="comment-input w-full px-2 py-1 border rounded-md"
+                placeholder="Write a comment..."
+                onkeypress="submitComment(event, this)"
+              />
+              <div class="comment-list mt-2 text-sm text-gray-700"></div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition transform hover:scale-105"
+        >
+          <img
+            src="images/6.jpg"
+            alt="Sigiriya"
+            class="w-full h-52 object-cover"
+          />
+          <div class="p-4">
+            <h4 class="text-xl font-heading font-bold">
+              Sigiriya - The Lion Rock
+            </h4>
+            <p class="text-gray-700 mt-2">
+              Climbing Sigiriya was an unforgettable experience! The ancient
+              ruins and panoramic views were stunning.
+            </p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <button
+                onclick="likePost(this)"
+                class="flex items-center space-x-2 text-gray-600 hover:text-accent transition"
+              >
+                <span class="text-lg">👍</span>
+                <span class="like-count">25</span>
+              </button>
+              <button
+                onclick="commentOnPost(this)"
+                class="text-gray-600 hover:text-accent transition"
+              >
+                💬 Comment
+              </button>
+            </div>
+
+            <div class="comments mt-4 hidden">
+              <input
+                type="text"
+                class="comment-input w-full px-2 py-1 border rounded-md"
+                placeholder="Write a comment..."
+                onkeypress="submitComment(event, this)"
+              />
+              <div class="comment-list mt-2 text-sm text-gray-700"></div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition transform hover:scale-105"
+        >
+          <img
+            src="images/3.jpg"
+            alt="Galle Fort"
+            class="w-full h-52 object-cover"
+          />
+          <div class="p-4">
+            <h4 class="text-xl font-heading font-bold">
+              A Walk Through Galle Fort
+            </h4>
+            <p class="text-gray-700 mt-2">
+              The historical streets, colonial buildings, and ocean views made
+              Galle Fort a perfect day trip.
+            </p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <button
+                onclick="likePost(this)"
+                class="flex items-center space-x-2 text-gray-600 hover:text-accent transition"
+              >
+                <span class="text-lg">👍</span>
+                <span class="like-count">18</span>
+              </button>
+              <button
+                onclick="commentOnPost(this)"
+                class="text-gray-600 hover:text-accent transition"
+              >
+                💬 Comment
+              </button>
+            </div>
+
+            <div class="comments mt-4 hidden">
+              <input
+                type="text"
+                class="comment-input w-full px-2 py-1 border rounded-md"
+                placeholder="Write a comment..."
+                onkeypress="submitComment(event, this)"
+              />
+              <div class="comment-list mt-2 text-sm text-gray-700"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8 text-center">
+      <div class="container mx-auto">
+        <h4 class="text-xl font-heading font-bold">Follow Us</h4>
+        <div class="flex justify-center space-x-4 mt-3">
+          <a href="comingsoon.html" class="hover:text-accent transition"
+            >Facebook</a
+          >
+          <a href="comingsoon.html" class="hover:text-accent transition"
+            >Instagram</a
+          >
+          <a href="comingsoon.html" class="hover:text-accent transition"
+            >Twitter</a
+          >
+        </div>
+        <p class="mt-4 font-text">&copy; 2025 Travus. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript for Likes & Comments -->
+    <script>
+      function likePost(button) {
+        let countSpan = button.querySelector(".like-count");
+        let count = parseInt(countSpan.textContent);
+        countSpan.textContent = count + 1;
+      }
+
+      function commentOnPost(button) {
+        let commentSection = button.parentElement.nextElementSibling;
+        commentSection.classList.toggle("hidden");
+      }
+
+      function submitComment(event, input) {
+        if (event.key === "Enter" && input.value.trim() !== "") {
+          let commentList = input.nextElementSibling;
+          let newComment = document.createElement("p");
+          newComment.textContent = input.value;
+          newComment.className = "bg-gray-200 p-2 rounded-md my-1";
+          commentList.appendChild(newComment);
+
+          input.value = ""; // Clear input field
+        }
+      }
+    </script>
+  </body>
+</html>
