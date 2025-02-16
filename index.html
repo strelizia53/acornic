@@ -44,7 +44,7 @@
       }
       .slider {
         display: flex;
-        transition: transform 1s ease-in-out;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       }
       .slider img {
         width: 100%;
@@ -52,22 +52,37 @@
         object-fit: cover;
         flex-shrink: 0;
       }
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 12px 18px;
+        border-radius: 50%;
+        transition: background 0.3s ease-in-out;
+      }
+      .nav-btn:hover {
+        background-color: rgba(0, 0, 0, 0.9);
+      }
     </style>
   </head>
   <body class="bg-neutral text-dark font-body">
     <!-- Navbar -->
     <nav class="bg-primary text-white py-4 shadow-lg">
       <div class="container mx-auto flex justify-between items-center px-6">
-        <h1 class="text-2xl font-heading font-bold">Travus</h1>
+        <a href="index.html" class="text-2xl font-heading font-bold">Travus</a>
 
         <!-- Desktop Menu -->
         <ul class="hidden md:flex space-x-6 font-text">
-          <li><a href="#" class="hover:text-accent transition">Home</a></li>
           <li>
-            <a href="#" class="hover:text-accent transition">Destinations</a>
+            <a href="guide.html" class="hover:text-accent transition">guides</a>
           </li>
-          <li><a href="#" class="hover:text-accent transition">Guides</a></li>
-          <li><a href="#" class="hover:text-accent transition">Contact</a></li>
+          <li>
+            <a href="community.html" class="hover:text-accent transition"
+              >community</a
+            >
+          </li>
         </ul>
 
         <button
@@ -90,22 +105,11 @@
         </div>
 
         <!-- Navigation Buttons -->
-        <button
-          id="prevBtn"
-          class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded-full hover:bg-black transition"
-        >
-          &#10094;
-        </button>
-        <button
-          id="nextBtn"
-          class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded-full hover:bg-black transition"
-        >
-          &#10095;
-        </button>
+        <button id="prevBtn" class="nav-btn left-4">&#10094;</button>
+        <button id="nextBtn" class="nav-btn right-4">&#10095;</button>
       </div>
     </header>
 
-    <!-- Features Section -->
     <!-- Features Section -->
     <section class="py-16 px-6 md:px-20 bg-gray-50">
       <h3 class="text-3xl font-subheading font-bold text-center">
@@ -114,7 +118,7 @@
       <div class="mt-10 grid md:grid-cols-3 gap-8">
         <!-- Feature 1 -->
         <div
-          class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition transform hover:scale-105"
         >
           <div class="flex justify-center mb-4">
             <img src="svg/1.svg" alt="Security Icon" class="w-16 h-16" />
@@ -123,16 +127,17 @@
             Highly Secure Travel Guides
           </h4>
           <p class="mt-2 text-gray-600">
-            At Travus, we ensure that all travel guides undergo a **rigorous
-            verification process**. Copies of their identification documents are
-            securely maintained, and background checks are conducted to
-            guarantee **safety and reliability** for travelers.
+            At Travus, we ensure that all travel guides undergo a
+            <strong>rigorous verification process</strong>. Copies of their
+            identification documents are securely maintained, and background
+            checks are conducted to guarantee
+            <strong>safety and reliability</strong> for travelers.
           </p>
         </div>
 
         <!-- Feature 2 -->
         <div
-          class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition transform hover:scale-105"
         >
           <div class="flex justify-center mb-4">
             <img src="svg/2.svg" alt="Helpline Icon" class="w-16 h-16" />
@@ -141,17 +146,17 @@
             24/7 Dedicated Helpline
           </h4>
           <p class="mt-2 text-gray-600">
-            Your safety is our top priority. Our **24/7 customer support
-            helpline** is always available to assist you in case of emergencies,
-            inquiries, or any travel-related concerns. Whether you need
-            assistance with bookings or require immediate support, we are here
-            to help.
+            Your safety is our top priority. Our
+            <strong>24/7 customer support helpline</strong> is always available
+            to assist you in case of emergencies, inquiries, or any
+            travel-related concerns. Whether you need assistance with bookings
+            or require immediate support, we are here to help.
           </p>
         </div>
 
         <!-- Feature 3 -->
         <div
-          class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition transform hover:scale-105"
         >
           <div class="flex justify-center mb-4">
             <img src="svg/3.svg" alt="Mobile App Icon" class="w-16 h-16" />
@@ -160,10 +165,13 @@
             Mobile App for Easy Access
           </h4>
           <p class="mt-2 text-gray-600">
-            Experience **seamless access** to our services with the Travus
-            mobile application. Our app provides an intuitive interface for
-            **booking guides, accessing safety features, and managing your
-            travel itinerary**—all from the convenience of your smartphone.
+            Experience <strong>seamless access</strong> to our services with the
+            Travus mobile application. Our app provides an intuitive interface
+            for
+            <strong
+              >booking guides, accessing safety features, and managing your
+              travel itinerary</strong
+            >—all from the convenience of your smartphone.
           </p>
         </div>
       </div>
@@ -174,9 +182,15 @@
       <div class="container mx-auto">
         <h4 class="text-xl font-heading font-bold">Follow Us</h4>
         <div class="flex justify-center space-x-4 mt-3">
-          <a href="#" class="hover:text-accent transition">Facebook</a>
-          <a href="#" class="hover:text-accent transition">Instagram</a>
-          <a href="#" class="hover:text-accent transition">Twitter</a>
+          <a href="comingsoon.html" class="hover:text-accent transition"
+            >Facebook</a
+          >
+          <a href="comingsoon.html" class="hover:text-accent transition"
+            >Instagram</a
+          >
+          <a href="comingsoon.html" class="hover:text-accent transition"
+            >Twitter</a
+          >
         </div>
         <p class="mt-4 font-text">&copy; 2025 Travus. All rights reserved.</p>
       </div>
@@ -203,27 +217,20 @@
           moveSlide();
         }
 
-        // Auto-slide every 5 seconds
         let interval = setInterval(nextSlide, 5000);
 
-        document
-          .getElementById("nextBtn")
-          .addEventListener("click", function () {
-            nextSlide();
-            resetInterval();
-          });
+        document.getElementById("nextBtn").addEventListener("click", nextSlide);
+        document.getElementById("prevBtn").addEventListener("click", prevSlide);
 
         document
-          .getElementById("prevBtn")
-          .addEventListener("click", function () {
-            prevSlide();
-            resetInterval();
-          });
-
-        function resetInterval() {
-          clearInterval(interval);
-          interval = setInterval(nextSlide, 5000);
-        }
+          .querySelector(".slider-container")
+          .addEventListener("mouseover", () => clearInterval(interval));
+        document
+          .querySelector(".slider-container")
+          .addEventListener(
+            "mouseleave",
+            () => (interval = setInterval(nextSlide, 5000))
+          );
       });
     </script>
   </body>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travus - Coming Soon</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@400;700&family=Nunito:wght@400;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1E3A5F",
+              secondary: "#2CA6A4",
+              accent: "#F76707",
+              neutral: "#F8F9FA",
+              dark: "#24292E",
+            },
+            fontFamily: {
+              heading: ["Poppins", "sans-serif"],
+              subheading: ["Montserrat", "sans-serif"],
+              body: ["Nunito", "sans-serif"],
+              text: ["Roboto", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .countdown div {
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        padding: 15px;
+        width: 80px;
+      }
+    </style>
+  </head>
+
+  <body class="bg-neutral text-dark font-body min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-primary text-white py-4 shadow-lg">
+      <div class="container mx-auto flex justify-between items-center px-6">
+        <a href="index.html" class="text-2xl font-heading font-bold">Travus</a>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6 font-text">
+          <li>
+            <a href="guide.html" class="hover:text-accent transition">guides</a>
+          </li>
+          <li>
+            <a href="community.html" class="hover:text-accent transition"
+              >community</a
+            >
+          </li>
+        </ul>
+
+        <button
+          class="bg-accent px-4 py-2 rounded-md font-semibold hover:bg-orange-600 transition"
+        >
+          Book Now
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative flex flex-col justify-center items-center h-[50vh] text-white text-center bg-cover bg-center px-6"
+      style="background-image: url('images/2.jpg')"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+      <div class="relative z-10 max-w-2xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-heading font-bold mb-4">
+          Find Your Guide
+        </h1>
+        <p class="text-lg md:text-xl font-text leading-relaxed">
+          Explore trusted guides to make your travels easy & safe.
+        </p>
+
+        <!-- Search Bar -->
+        <div
+          class="mt-6 w-full flex items-center bg-white rounded-md shadow-lg overflow-hidden"
+        >
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search guides..."
+            class="px-4 py-3 w-full focus:outline-none text-dark"
+          />
+          <button
+            class="bg-accent text-white px-6 py-3 font-semibold hover:bg-orange-600 transition"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guide List Section -->
+    <section class="py-16 px-6 md:px-20 bg-gray-50">
+      <h3 class="text-3xl font-subheading font-bold text-center mb-8">
+        Our Trusted Guides
+      </h3>
+
+      <div
+        id="guideList"
+        class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      >
+        <!-- Guide Card (Template) -->
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition transform hover:scale-105 guide-card"
+        >
+          <img
+            src="images/6.jpg"
+            alt="Guide Image"
+            class="w-full h-52 object-cover"
+          />
+          <div class="p-4">
+            <h4 class="text-xl font-heading font-bold">John Doe</h4>
+            <p class="text-gray-600 text-sm">Specialist in European Travel</p>
+            <p class="mt-2 text-gray-700 text-sm">10+ Years Experience</p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition transform hover:scale-105 guide-card"
+        >
+          <img
+            src="images/6.jpg"
+            alt="Guide Image"
+            class="w-full h-52 object-cover"
+          />
+          <div class="p-4">
+            <h4 class="text-xl font-heading font-bold">Maria Smith</h4>
+            <p class="text-gray-600 text-sm">Adventure & Trekking Expert</p>
+            <p class="mt-2 text-gray-700 text-sm">8+ Years Experience</p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition transform hover:scale-105 guide-card"
+        >
+          <img
+            src="images/6.jpg"
+            alt="Guide Image"
+            class="w-full h-52 object-cover"
+          />
+          <div class="p-4">
+            <h4 class="text-xl font-heading font-bold">Liam Wong</h4>
+            <p class="text-gray-600 text-sm">Wildlife & Safari Guide</p>
+            <p class="mt-2 text-gray-700 text-sm">15+ Years Experience</p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition transform hover:scale-105 guide-card"
+        >
+          <img
+            src="images/6.jpg"
+            alt="Guide Image"
+            class="w-full h-52 object-cover"
+          />
+          <div class="p-4">
+            <h4 class="text-xl font-heading font-bold">Sophia Lee</h4>
+            <p class="text-gray-600 text-sm">Luxury Travel Concierge</p>
+            <p class="mt-2 text-gray-700 text-sm">12+ Years Experience</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8 text-center">
+      <div class="container mx-auto">
+        <h4 class="text-xl font-heading font-bold">Follow Us</h4>
+        <div class="flex justify-center space-x-4 mt-3">
+          <a href="comingsoon.html" class="hover:text-accent transition"
+            >Facebook</a
+          >
+          <a href="comingsoon.html" class="hover:text-accent transition"
+            >Instagram</a
+          >
+          <a href="comingsoon.html" class="hover:text-accent transition"
+            >Twitter</a
+          >
+        </div>
+        <p class="mt-4 font-text">&copy; 2025 Travus. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Search Functionality -->
+    <script>
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", function () {
+          const query = this.value.toLowerCase();
+          const guides = document.querySelectorAll(".guide-card");
+
+          guides.forEach((guide) => {
+            const name = guide.querySelector("h4").textContent.toLowerCase();
+            const expertise = guide
+              .querySelector("p")
+              .textContent.toLowerCase();
+
+            if (name.includes(query) || expertise.includes(query)) {
+              guide.style.display = "block";
+            } else {
+              guide.style.display = "none";
+            }
+          });
+        });
+    </script>
+  </body>
+</html>
